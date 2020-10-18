@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Heart Disease Prediction System (HDPS)</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">
+            Heart Disease Prediction System
+            <span class="subtitle">Machine Learning based project made in Python</span>
+        </div>
+
+        <div class="nav">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="/">Home</a></li>
+                <li class="nav-link"><a href="/predict">Predict</a></li>
+                <li class="nav-link"><a href="/downloads">Downloads</a></li>
+            </ul>
+        </div>
+
+        <div class="project-status review"></div>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+        Project by students of Terna Engineering College (SEM 3 - Mini Project)
+    </div>
+</body>
+
+</html>
