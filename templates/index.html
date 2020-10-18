@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="homePage">
+  <div class="block">
+    <h1>Introduction</h1>
+    <p>The diagnosis of heart disease in most cases depends on a complex combination of clinical and pathological data.
+      Because of this complexity, there exists a significant amount of interest among clinical professionals and
+      researchers regarding the efficient and accurate prediction of heart disease. In this paper, we develop a heart
+      disease prediction system that can assist medical professionals in predicting heart disease status based on
+      clinical data of patients. Our approaches include three steps. Firstly, we select important features based on
+      feature selection technique and according to clinical studies. Secondly, we develop artificial neural network
+      algorithms for classifying heart disease based on these extracted clinical features. The accuracy of prediction is
+      near 87%. Finally, we develop a user-friendly heart disease prediction system (HDPS). The HDPS system will consist
+      of multiple features, including input clinical data section and prediction performance display section with
+      execution time, accuracy and predicted result. Our approaches are effective in predicting the heart disease of
+      patients. The HDPS system developed in this study is a novel approach that can be used in the classification of
+      heart disease.</p>
+  </div>
+
+  <div class="block">
+    <div class="block">
+      <h1>Dataset</h1>
+      <p>The dataset used in this project is the Cleveland Heart Disease dataset taken from the UCI repository.
+        <br><br>
+        The dataset contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In
+        particular, the Cleveland database is the only one that has been used by ML researchers to this date. The
+        “target”
+        field refers to the presence of heart disease in the patient. It is integer value from 0 (no presence) to 4
+        (presence).
+        <br><br>
+        The names and personal profiles (social security number) of the patients were removed from the database in order
+        to maintain privacy of the profiles.
+      </p>
+    </div>
+
+    <div class="block">
+      <h2>Attribute Information</h2>
+      <p>According to clinical trials and studies only 14 factors plays a major role in detecting heart disease, which
+        are:
+      </p>
+      <ul>
+        <li><b>Age</b>: Displays the age of an individual</li>
+        <li><b>Sex</b>: Displays the gender of an individual using the following format: <ul>
+            <li>1 = Male</li>
+            <li>0 = Female</li>
+          </ul>
+        </li>
+        <li><b>Chest Pain Type</b>: Displays the type of chest pain experienced by the individual using the following
+          format: <ul>
+            <li>1 = Typical angina</li>
+            <li>2 = Atypical angina</li>
+            <li>3 = Non-anginal pain</li>
+            <li>4 = Asymtotic</li>
+          </ul>
+        </li>
+        <li><b>Resting Blood Pressure</b>: Displays the resting blood pressure value of an individual in mmHg (unit)
+        </li>
+        <li><b>Serum Cholesterol</b>: Displays the serum cholesterol in mg/dl (unit)</li>
+        <li><b>Fasting Blood Sugar</b>: Compares the fasting blood sugar value of an individual with 120mg/dl. <ul>
+            <li>1 = If fasting blood sugar > 120mg/dl</li>
+            <li>0 = If fasting blood sugar < 120mg/dl </li> </ul> </li> <li><b>Resting ECG</b>: Displays resting
+                electrocardiographic results: <ul>
+                  <li>0 = Normal</li>
+                  <li>1 = Having ST-T wave abnormality</li>
+                  <li>2 = Left ventricular hypertrophy</li>
+                </ul>
+            </li>
+            <li><b>Maximum Heart Rate Achieved</b>: Displays the max heart rate achieved by an individual</li>
+            <li><b>Exercise Induced Angina</b>: <ul>
+                <li>1 = Yes</li>
+                <li>0 = No</li>
+              </ul>
+            </li>
+            <li><b>ST depression induced by exercise relative to rest</b>: Displays the value which is an integer or
+              float.</li>
+            <li><b>Peak exercise ST segment</b>: <ul>
+                <li>1 = Upsloping</li>
+                <li>2 = Flat</li>
+                <li>3 = Downsloping</li>
+              </ul>
+            </li>
+            <li><b>Number of major vessels colored by fluoroscopy</b>: Displays the value as integer or float.</li>
+            <li><b>Thalassemia</b>: Displays the thalassemia: <ul>
+                <li>3 = Normal</li>
+                <li>6 = Fixed defect</li>
+                <li>7 = Reversible defect</li>
+              </ul>
+            </li>
+            <li><b>Diagnosis of heart disease</b>: Displays whether the individual is suffering from heart disease or
+              not: <ul>
+                <li>0 = Absence</li>
+                <li>1 = Present</li>
+              </ul>
+            </li>
+          </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <h1>Report</h1>
+    <p>Download full report from below.</p>
+    <div class="download-block">
+      <span>Heart Disease Prediction System (HDPS) Report</span>
+      <a href="/downloads/Heart Disease Prediction System (HDPS) Report.pdf" class="btn">Download (.pdf)</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

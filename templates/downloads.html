@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="downloadPage">
+    <div class="block">
+        <h1>Report</h1>
+        <p>Download full report from below.</p>
+        <div class="download-block">
+            <span>Heart Disease Prediction System (HDPS) Report</span>
+            <a href="/downloads/Heart Disease Prediction System (HDPS) Report.pdf" class="btn">Download (.pdf)</a>
+        </div>
+    </div>
+
+    <div class="block">
+        <h1>Dataset</h1>
+        <p>Download Cleveland Heart Disease dataset from below. Dataset contains 14 attribute from which 13 are features
+            and one is target.
+        </p>
+        <div class="download-block">
+            <span>Cleveland Heart Disease Dataset</span>
+            <a href="/downloads/Cleveland Heart Disease Dataset.zip" class="btn">Download (.zip)</a>
+        </div>
+    </div>
+
+    <div class="block">
+        <h1>Notebook</h1>
+        <p>Download interactive python notebook (Jupyter Notebook) from below.
+        </p>
+        <div class="download-block">
+            <span>Heart Disease Prediction System (HDPS) Notebook</span>
+            <a href="/downloads/Heart Disease Prediction System (HDPS) Notebook.ipynb" class="btn">Download (.ipynb)</a>
+        </div>
+    </div>
+
+    <div class="block">
+        <h1>Flask Project</h1>
+        <p>Download full project (this) file made in Flask from below.
+        </p>
+        <div class="download-block">
+            <span>Heart Disease Prediction System (HDPS) Flask</span>
+            <button disabled class="btn disabled">Project not reviewed</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

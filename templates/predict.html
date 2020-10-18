@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="predictPage">
+    <p class="info-block">
+        There are 13 attribute used to predict the heart disease. Fill the form below and click on 'Predict' button to
+        get result. Your result will be displyed below this.
+    </p>
+
+    {% if pred != None %}
+    <p class="alert al-{{ pred }}">
+        {% if pred == 0 %}
+        Congratulations!! You don't have heart disease. Stay healthy.
+        {% else %}
+        You have heart disease. Please recommned to nearby doctor or hospital.
+        {% endif %}
+    </p>
+    {% endif %}
+
+    <form action="" method="post">
+        <div class="form">
+            <div class="form-col">
+                <div class="form-row">
+                    <label for="inputAge">Age</label>
+                    <input name="age" id="inputAge" type="number" min="0" value="0">
+                </div>
+
+                <div class="form-row">
+                    <label for="">Gender</label>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioGenderMale" name="gender" value="1" checked>
+                        <label for="radioGenderMale">
+                            <div class="title">Male</div>
+                        </label>
+
+                        <input type="radio" id="radioGenderFemale" name="gender" value="0">
+                        <label for="radioGenderFemale">
+                            <div class="title">Female</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="">Chest Pain Type</label>
+
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioChestPain1" name="chestPain" value="0" checked>
+                        <label for="radioChestPain1">
+                            <div class="title">Typical Angina</div>
+                            <div class="info">Discomfort that is noted when the heart does not get enough blood or
+                                oxygen.
+                            </div>
+                        </label>
+
+                        <input type="radio" id="radioChestPain2" name="chestPain" value="1">
+                        <label for="radioChestPain2">
+                            <div class="title">Atypical Angina</div>
+                            <div class="info">Atypical angina implies that the complaint is actually angina pecto- ris,
+                                though not conforming in every way to the expected or classic description; noncardiac
+                                chest
+                                pain implies confi- dence that the problem doesn't rest with the heart.</div>
+                        </label>
+
+                        <input type="radio" id="radioChestPain3" name="chestPain" value="2">
+                        <label for="radioChestPain3">
+                            <div class="title">Non-Anginal</div>
+                            <div class="info">Nonanginal (not comparable) chest pain.</div>
+                        </label>
+
+                        <input type="radio" id="radioChestPain4" name="chestPain" value="3">
+                        <label for="radioChestPain4">
+                            <div class="title">Asymptomatic</div>
+                            <div class="info">Neither causing nor exhibiting symptoms of disease.</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputRbp">Resting Blood Pressure (mmHg)</label>
+                    <input name="rbp" id="inputRbp" type="number" min="0" value="0" step="any">
+                </div>
+
+                <div class="form-row">
+                    <label for="inputScl">Serum Cholesterol Level (mg/dl)</label>
+                    <input name="scl" id="inputScl" type="number" min="0" value="0" step="any">
+                </div>
+
+                <div class="form-row">
+                    <label for="inputFbs">Fasting Blood Sugar Level (mg/dl)</label>
+                    <input name="fbs" id="inputFbs" type="number" min="0" value="0" step="any">
+                </div>
+
+                <div class="form-row">
+                    <label for="">Resting ECG</label>
+
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioRestingECG1" name="restecg" value="0" checked>
+                        <label for="radioRestingECG1">
+                            <div class="title">Normal</div>
+                            <div class="info">Heart is beating in a regular sinus rhythm between 60 - 100 beats per
+                                minute.
+                            </div>
+                        </label>
+
+                        <input type="radio" id="radioRestingECG2" name="restecg" value="1">
+                        <label for="radioRestingECG2">
+                            <div class="title">ST-T wave abnormality</div>
+                            <div class="info">The clinical data are not available to correlate with the ECG findings.
+                            </div>
+                        </label>
+
+                        <input type="radio" id="radioRestingECG3" name="restecg" value="2">
+                        <label for="radioRestingECG3">
+                            <div class="title">Left ventricular hypertrophy</div>
+                            <div class="info">Enlargement and thickening (hypertrophy) of the walls of your heart's main
+                                pumping chamber (left ventricle).</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-col">
+                <div class="form-row">
+                    <label for="inputHr">Maximum heart rate achieved</label>
+                    <input name="hr" id="inputHr" type="number" min="0" value="0">
+                </div>
+
+                <div class="form-row">
+                    <label for="">Exercise Induced Angina</label>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioExerciseAnginaYes" name="exerangina" value="1" checked>
+                        <label for="radioExerciseAnginaYes">
+                            <div class="title">Yes</div>
+                        </label>
+
+                        <input type="radio" id="radioExerciseAnginaNo" name="exerangina" value="0">
+                        <label for="radioExerciseAnginaNo">
+                            <div class="title">No</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputSt">ST depression induced</label>
+                    <input name="st" id="inputSt" type="number" min="0" value="0" step="any">
+                </div>
+
+                <div class="form-row">
+                    <label for="">Peak exercise ST segment</label>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioSTSegmentUpsloping" name="slope" value="0" checked>
+                        <label for="radioSTSegmentUpsloping">
+                            <div class="title">Upsloping</div>
+                        </label>
+
+                        <input type="radio" id="radioSTSegmentFlat" name="slope" value="1">
+                        <label for="radioSTSegmentFlat">
+                            <div class="title">Flat</div>
+                        </label>
+
+                        <input type="radio" id="radioSTSegmentDownsloping" name="slope" value="2">
+                        <label for="radioSTSegmentDownsloping">
+                            <div class="title">Downsloping</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="inputCa">Number of major vessels colored by fluoroscopy</label>
+                    <input name="ca" id="inputCa" type="number" min="0" value="0">
+                </div>
+
+                <div class="form-row">
+                    <label for="">Thalassemia Defect</label>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radioThalassemiaNormal" name="thal" value="1" checked>
+                        <label for="radioThalassemiaNormal">
+                            <div class="title">Normal</div>
+                        </label>
+
+                        <input type="radio" id="radioThalassemiaFixed" name="thal" value="2">
+                        <label for="radioThalassemiaFixed">
+                            <div class="title">Fixed defect</div>
+                        </label>
+
+                        <input type="radio" id="radioThalassemiaReversible" name="thal" value="3">
+                        <label for="radioThalassemiaReversible">
+                            <div class="title">Reversible defect</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-submit">
+            <input type="submit" value="Predict">
+        </div>
+    </form>
+</div>
+{% endblock %}
